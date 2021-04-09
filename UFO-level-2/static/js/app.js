@@ -6,12 +6,18 @@ var ufoData = data;
 // select the button
 var button = d3.select("#filter-btn");
 
+var cityButton = d3.select("#city-filter-btn");
+
 // select the form
 var form = d3.select("#form");
 
+var cityForm = d3.select("#cityForm");
+
 // create event handlers
 button.on("click", runEnter);
+cityButton.on("click", runEnter);
 form.on("submit", runEnter);
+cityForm.on("submit", runEnter);
 
 // complete the event handler function for form
 function runEnter() {
@@ -24,9 +30,18 @@ function runEnter() {
 
     var inputValue = inputElement.property("value");
 
+    var inputCity = d3. select("#city");
+
+    var cityValue = inputCity.property("value");
+
+
     console.log(`hello${inputValue}`);
 
-    var filteredData = ufoData.filter(u => u.datetime === inputValue);
+    var filteredData = ufoData.filter(u => u.datetime === inputValue || u.city === cityValue);
+
+//     // var filterCity = filteredData.filter( f => f.city === cityValue);
+
+//     console.log(`this is where ${filteredData}`);
 
     var tbody = d3.select("tbody");
 
@@ -42,3 +57,16 @@ function runEnter() {
     });
 
 };
+
+// // Get a reference to the table body
+// var tbody = d3.select("tbody");
+
+// // create a for loop that goes through each dictionary to find the key and value and then append the value for each key
+// data.forEach((ufoData) => {
+//     var row = tbody.append("tr");
+//     Object.entries(ufoData).forEach(([key, value]) => {
+//       var cell = row.append("td");
+//       cell.text(value);
+//     });
+//   });
+  
