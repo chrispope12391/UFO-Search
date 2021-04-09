@@ -4,14 +4,17 @@
 var ufoData = data;
 
 // select the button
-var button = d3.select("#filter-btn");
+var button = d3.selectAll("#filter-btn, #city-filter-btn");
 
 // select the form
-var form = d3.select("#form");
+var form = d3.selectAll("#form, #cityForm");
+
+// var cityForm = d3.select("#cityForm");
 
 // create event handlers
 button.on("click", runEnter);
 form.on("submit", runEnter);
+// cityForm.on("submit", runEnter);
 
 // complete the event handler function for form
 function runEnter() {
@@ -20,13 +23,20 @@ function runEnter() {
     d3.event.preventDefault();
 
     // Select the input element and get the raw HTML node
-    var inputElement = d3. select("#datetime");
+    var inputElement = d3. selectAll("#datetime, #city");
 
     var inputValue = inputElement.property("value");
 
+    var inputCity = d3. select("#city");
+
+    var cityValue = inputCity.property("value");
+
+
     console.log(`hello${inputValue}`);
 
-    var filteredData = ufoData.filter( u => u.datetime === inputValue);
+    var filteredData = ufoData.filter( u => (u.datetime === inputValue) || (u.city === inputValue) );
+
+    // var filterCity = filteredData.filter( f => f.city === cityValue);
 
     console.log(`this is where ${filteredData}`);
 
