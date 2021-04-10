@@ -6,18 +6,12 @@ var ufoData = data;
 // select the button
 var button = d3.select("#filter-btn");
 
-var cityButton = d3.select("#city-filter-btn");
-
 // select the form
 var form = d3.select("#form");
 
-var cityForm = d3.select("#cityForm");
-
 // create event handlers
 button.on("click", runEnter);
-cityButton.on("click", runEnter);
 form.on("submit", runEnter);
-cityForm.on("submit", runEnter);
 
 // complete the event handler function for form
 function runEnter() {
@@ -34,6 +28,17 @@ function runEnter() {
 
     var cityValue = inputCity.property("value");
 
+    var inputState = d3. select("#state");
+
+    var stateValue = inputState.property("value");
+
+    var inputCountry = d3. select("#country");
+
+    var countryValue = inputCountry.property("value");
+
+    var inputShape = d3. select("#shape");
+
+    var shapeValue = inputShape.property("value");
 
     console.log(`hello${inputValue}`);
 
@@ -46,6 +51,21 @@ function runEnter() {
     if (cityValue) {
 
         filteredData = filteredData.filter(u => u.city === cityValue);
+
+    }
+    if (stateValue) {
+
+        filteredData = filteredData.filter(u => u.state === stateValue);
+
+    }
+    if (countryValue) {
+
+        filteredData = filteredData.filter(u => u.country === countryValue);
+
+    }
+    if (shapeValue) {
+
+        filteredData = filteredData.filter(u => u.shape === shapeValue);
 
     }
 
