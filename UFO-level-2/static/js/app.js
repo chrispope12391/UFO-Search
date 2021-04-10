@@ -37,11 +37,17 @@ function runEnter() {
 
     console.log(`hello${inputValue}`);
 
-    var filteredData = ufoData.filter(u => u.datetime === inputValue || u.city === cityValue);
+    var filteredData = ufoData;
 
-//     // var filterCity = filteredData.filter( f => f.city === cityValue);
+    if (inputValue) {
 
-//     console.log(`this is where ${filteredData}`);
+        filteredData = filteredData.filter(u => u.datetime === inputValue);
+    }
+    if (cityValue) {
+
+        filteredData = filteredData.filter(u => u.city === cityValue);
+
+    }
 
     var tbody = d3.select("tbody");
 
@@ -57,16 +63,3 @@ function runEnter() {
     });
 
 };
-
-// // Get a reference to the table body
-// var tbody = d3.select("tbody");
-
-// // create a for loop that goes through each dictionary to find the key and value and then append the value for each key
-// data.forEach((ufoData) => {
-//     var row = tbody.append("tr");
-//     Object.entries(ufoData).forEach(([key, value]) => {
-//       var cell = row.append("td");
-//       cell.text(value);
-//     });
-//   });
-  
