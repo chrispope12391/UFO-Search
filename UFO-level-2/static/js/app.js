@@ -7,7 +7,7 @@ var ufoData = data;
 var button = d3.select("#filter-btn");
 
 // select the form
-var form = d3.select("#form");
+var form = d3.selectAll("#form");
 
 // create event handlers
 button.on("click", runEnter);

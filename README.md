@@ -32,6 +32,17 @@ The resulting web page should resemble this:
 
 ### UFO-Level-2
 
+For the second level, we will incorporate multiple filters which will allow you to narrow your results by up to five different criteria. Those added filters are:
+
+    *  City
+    * State
+    * Country
+    * Shape
+
+Once these added filters are add, the results should resemble this:
+
+
+
 ## Dataset
 
 * [UFO Dataset](https://github.com/chrispope12391/javascript-challenge/blob/main/UFO-level-1/static/js/data.js)
