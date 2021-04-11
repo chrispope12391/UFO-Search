@@ -34,14 +34,14 @@ The resulting web page should resemble this:
 
 For the second level, we will incorporate multiple filters which will allow you to narrow your results by up to five different criteria. Those added filters are:
 
-    *  City
-    * State
-    * Country
-    * Shape
+* City
+* State
+* Country
+* Shape
 
 Once these added filters are add, the results should resemble this:
 
-
+![UFO-level-2](https://user-images.githubusercontent.com/75814760/114288098-25e8fb00-9a32-11eb-9788-d56a414f74e7.JPG)
 
 ## Dataset
 
