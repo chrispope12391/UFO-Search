@@ -37,7 +37,6 @@ function runEnter() {
 
     var shapeValue = inputShape.property("value");
 
-    console.log(`hello${inputValue}`);
 
     // assign data to the variable filtereddata
     var filteredData = ufoData;
