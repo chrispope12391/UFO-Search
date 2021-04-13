@@ -1,17 +1,14 @@
-// console.log(`here${data}`);
-
 // assign the data from data.js to a variable
 var ufoData = data;
 
-// select the button
-var button = d3.select("#filter-btn");
+// // select the button
+// var button = d3.select("#filter-btn");
 
-// select the form
-var form = d3.selectAll("#form");
+// // select the form
+// var form = d3.select("#form").node().value;
 
-// create event handlers
-button.on("click", runEnter);
-form.on("submit", runEnter);
+// select all of the filters and run the function runenter on "change"
+d3.selectAll(".filter").on("change", runEnter);
 
 // complete the event handler function for form
 function runEnter() {
@@ -42,8 +39,10 @@ function runEnter() {
 
     console.log(`hello${inputValue}`);
 
+    // assign data to the variable filtereddata
     var filteredData = ufoData;
 
+    // filter the data by each value if the input matches a value in the table
     if (inputValue) {
 
         filteredData = filteredData.filter(u => u.datetime === inputValue);
@@ -69,10 +68,13 @@ function runEnter() {
 
     }
 
+    // select the table body
     var tbody = d3.select("tbody");
 
+    // clear the table after each change
     tbody.html("");
 
+    // append the data to the table
     // create a for loop that goes through each dictionary to find the key and value and then append the value for each key
     filteredData.forEach((ufo) => {
         var row = tbody.append("tr");

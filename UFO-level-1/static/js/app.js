@@ -24,12 +24,13 @@ function runEnter() {
 
     var inputValue = inputElement.property("value");
 
-    console.log(`hello${inputValue}`);
-
+    // filter the table by the value in the input field
     var filteredData = ufoData.filter(u => u.datetime === inputValue);
 
+    // select the table body
     var tbody = d3.select("tbody");
 
+    //clear the table body
     tbody.html("");
 
     // create a for loop that goes through each dictionary to find the key and value and then append the value for each key
